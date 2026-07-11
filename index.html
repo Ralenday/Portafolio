@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Axel — Portafolio</title>
+<meta name="description" content="Hola! soy Axel y este es mi portafolio profesional, desarrollador web. Proyectos, experiencia y contacto." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="signal-track" aria-hidden="true">
+  <div class="signal-fill" id="signalFill"></div>
+  <div class="signal-nodes" id="signalNodes"></div>
+</div>
+<div class="signal-track-mobile" aria-hidden="true">
+  <div class="signal-fill-mobile" id="signalFillMobile"></div>
+</div>
+
+<header class="nav" id="nav">
+  <a href="#hero" class="nav-logo">AR<span class="nav-logo-dot">.</span></a>
+  <nav class="nav-links" id="navLinks">
+    <a href="#about">Sobre mí</a>
+    <a href="#skills">Stack</a>
+    <a href="#projects">Proyectos</a>
+    <a href="#experience">Experiencia</a>
+    <a href="#contact">Contacto</a>
+  </nav>
+  <a href="#contact" class="nav-cta">Contáctame</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<main>
+
+  <section class="hero" id="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="hero-grid"></div>
+      <div class="hero-blob"></div>
+    </div>
+    <div class="section-inner hero-inner">
+      <p class="eyebrow reveal">MI PORTAFOLIO — DESARROLLADOR WEB</p>
+      <h1 class="hero-title reveal">
+        Hola, soy <span class="accent-text">Axel</span>.<br>
+        Construyo <span class="underline-accent">productos digitales</span><br>
+        con código limpio y buen ojo visual.
+      </h1>
+      <p class="hero-sub reveal">
+        Desarrollador Full Stack apasionado por crear productos digitales rápidos, accesibles y visualmente atractivos. 
+        Aunque estoy al inicio de mi camino, enfrento cada proyecto con entusiasmo, atención al detalle y muchas ganas de resolver problemas reales.
+      </p>
+      <div class="hero-actions reveal">
+        <a href="#projects" class="btn btn-primary">Ver proyectos</a>
+        <a href="#contact" class="btn btn-ghost">Hablemos</a>
+      </div>
+    </div>
+    <a href="#about" class="scroll-cue" aria-label="Bajar a la siguiente sección">
+      <span>scroll</span>
+      <svg width="14" height="20" viewBox="0 0 14 20" fill="none"><path d="M7 1v18M1 13l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </section>
+
+  <section class="about" id="about">
+    <div class="section-inner">
+      <p class="eyebrow reveal">01 · SOBRE MÍ</p>
+      <div class="about-grid">
+        <div class="about-photo reveal">
+          <div class="photo-frame">
+            <img src="assets/foto.png" alt="Foto Axel">
+            <div class="photo-placeholder">
+              <span>Foto</span>
+              <small>Dia Formal</small>
+            </div>
+          </div>
+        </div>
+        <div class="about-content reveal">
+          <h2 class="section-title">No solo escribo código, resuelvo problemas.</h2>
+          <p class="about-text">
+            Mi aventura en el mundo de la programación comenzó hace unos años en preparatoria, casi por casualidad, cuando descubrí que podía convertir ideas en realidad con solo unas líneas de código. Aquel primer “¡funciona!” me enganchó por completo. Aunque aún no acumulo una larga trayectoria profesional, cada proyecto que emprendo lo vivo con la misma energía e ilusión del primer día.
+          </p>
+          <p class="about-text">
+            Soy un entusiasta de los retos. Me motiva especialmente enfrentar problemas complejos, optimizar soluciones y crear experiencias que realmente aporten valor a las personas. Disfruto trabajando con código limpio, bien estructurado y mantenible, y siempre busco entender el “porqué” detrás de cada decisión técnica. Valoro enormemente la colaboración, la comunicación clara y el aprendizaje continuo; creo que un buen desarrollador no solo escribe buen código, sino que también sabe trabajar en equipo y adaptarse rápidamente.
+          </p>
+          <div class="about-facts">
+            <div class="fact">
+              <span class="fact-label">Ubicación</span>
+              <span class="fact-value" id="factLocation">San Luis Rio Colorado, Sonora, México</span>
+            </div>
+            <div class="fact">
+              <span class="fact-label">Enfoque</span>
+              <span class="fact-value">Frontend &amp; Backend</span>
+            </div>
+            <div class="fact">
+              <span class="fact-label">Disponibilidad</span>
+              <span class="fact-value">Abierto a proyectos freelance</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SKILLS ===================== -->
+  <section class="skills" id="skills">
+    <div class="section-inner">
+      <p class="eyebrow reveal">02 · STACK</p>
+      <h2 class="section-title reveal">Con qué trabajo.</h2>
+      <div class="skills-grid" id="skillsGrid">
+        <!-- Se genera dinámicamente desde script.js (SKILLS) -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROJECTS ===================== -->
+  <section class="projects" id="projects">
+    <div class="section-inner">
+      <p class="eyebrow reveal">03 · PROYECTOS</p>
+      <h2 class="section-title reveal">Cosas que he construido.</h2>
+      <p class="section-lead reveal">
+        Selección de proyectos y colaboraciones recientes. Cada uno incluye
+        capturas, una breve descripción y el enlace al repositorio.
+      </p>
+      <div class="projects-list" id="projectsList">
+        <!-- Se genera dinámicamente desde script.js (PROJECTS) -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== EXPERIENCE ===================== -->
+  <section class="experience" id="experience">
+    <div class="section-inner">
+      <p class="eyebrow reveal">04 · EXPERIENCIA</p>
+      <h2 class="section-title reveal">Trayectoria.</h2>
+      <div class="timeline" id="timelineList">
+        <!-- Se genera dinámicamente desde script.js (EXPERIENCE) -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT / FOOTER ===================== -->
+  <section class="contact" id="contact">
+    <div class="section-inner contact-inner">
+      <p class="eyebrow reveal">05 · CONTACTO</p>
+      <h2 class="contact-title reveal">Construyamos algo juntos.</h2>
+      <p class="section-lead reveal">
+        ¿Tienes un proyecto en mente o quieres colaborar? Escríbeme, o revisa
+        el resto de mis repositorios en GitHub.
+      </p>
+
+      <div class="contact-grid reveal">
+        <a class="contact-card" id="emailLink" href="mailto:tu@email.com">
+          <span class="contact-card-label">Email</span>
+          <span class="contact-card-value" id="emailValue">tu@email.com</span>
+        </a>
+        <a class="contact-card" id="linkedinLink" href="#" target="_blank" rel="noopener">
+          <span class="contact-card-label">LinkedIn</span>
+          <span class="contact-card-value">Conectemos</span>
+        </a>
+        <a class="contact-card contact-card-github" id="githubLink" href="#" target="_blank" rel="noopener">
+          <span class="contact-card-label">GitHub</span>
+          <span class="contact-card-value" id="githubValue">github.com/tu-usuario</span>
+          <svg class="github-icon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.79-.25.79-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.34-1.28-1.7-1.28-1.7-1.04-.72.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.72 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.77.12 3.06.74.81 1.19 1.84 1.19 3.1 0 4.45-2.7 5.42-5.27 5.71.42.36.78 1.07.78 2.16 0 1.56-.02 2.82-.02 3.2 0 .31.21.66.8.55A10.52 10.52 0 0 0 23.5 12c0-6.27-5.23-11.5-11.5-11.5Z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>Diseñado y construido por Axel Ramirez - <span id="footerYear"></span></p>
+    </footer>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

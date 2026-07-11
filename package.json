@@ -1,0 +1,9 @@
+{
+  "name": "portafolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portafolio profesional - plantilla estática HTML/CSS/JS",
+  "scripts": {
+    "dev": "npx serve ."
+  }
+}
