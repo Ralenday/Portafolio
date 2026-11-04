@@ -14,7 +14,11 @@ const SKILLS = [
   },
   {
     category: "Backend",
-    items: ["Node.js", "Express", "Python", "REST APIs", "TypeScript"]
+    items: ["Node.js", "Express", "Python", "Django", "REST APIs", "TypeScript"]
+  },
+  {
+    category: "Móvil",
+    items: ["Kotlin", "Jetpack Compose", "Wear OS", "React Native"]
   },
   {
     category: "Bases de datos",
@@ -27,7 +31,51 @@ const SKILLS = [
 ];
 
 // Proyectos que realice
+// - private: true  -> el repositorio es privado; se muestra la etiqueta en vez del enlace a GitHub
+// - demo: "url"    -> agrega el botón "Ver demo" (opcional)
 const PROJECTS = [
+  {
+    tag: "Hackatón INE México",
+    title: "PerfilCívico",
+    tagline: "Perfiles de participación ciudadana en los 72 municipios de Sonora",
+    description:
+      "Plataforma web desarrollada para el Hackatón INE México (Reto 1) que convierte datos históricos de participación electoral en perfiles estadísticos fáciles de entender. Incluye mapa interactivo de los 72 municipios con varias capas, comparación histórica municipio vs. estado, participación por edad y sexo, seis perfiles ciudadanos con estrategias diferenciadas y fichas descargables en PDF. Los datos se procesan con Python y Pandas y se publican como JSON estático.",
+    tech: ["React 19", "Vite", "Tailwind", "Leaflet", "Recharts", "Python + Pandas"],
+    github: "https://github.com/Ralenday/perfil-civico",
+    private: true,
+    images: [
+      { src: "assets/PCInicio.webp" },
+      { src: "assets/PCPerfiles.webp" },
+      { src: "assets/PCMapa.webp" }
+    ]
+  },
+  {
+    tag: "App móvil + reloj",
+    title: "MemoFlash",
+    tagline: "Flashcards con repetición espaciada para Android y Wear OS",
+    description:
+      "Asistente de estudio con tarjetas y repetición espaciada. En el teléfono creas y editas mazos (texto e imágenes), importas listas desde Excel/CSV, estudias con tarjetas que giran y consultas estadísticas de retención. En el reloj repasas sesiones cortas sin necesitar el teléfono; ambos dispositivos se sincronizan sin internet mediante la Wearable Data Layer y el teléfono respalda todo en la nube.",
+    tech: ["Kotlin", "Jetpack Compose", "Wear OS", "SQLite", "Supabase"],
+    github: "https://github.com/Ralenday/MemoFlash",
+    images: [
+      { src: "assets/MFEstudio.webp" },
+      { src: "assets/MFReloj.webp" }
+    ]
+  },
+  {
+    tag: "Proyecto escolar",
+    title: "RaleGames",
+    tagline: "No vende juegos: te ayuda a decidir cuál jugar",
+    description:
+      "Aplicación web en Django donde eliges cómo te sientes y cuánto tiempo tienes, y una ruleta te recomienda un juego real de la base de datos de IGDB (Twitch). Incluye buscador con filtros por género, detalle de cada juego y una bitácora personal para llevar lo que quieres jugar, juegas, terminas o abandonas. Consume la API de IGDB con OAuth2 y caché, y expone su propia API REST protegida con JWT.",
+    tech: ["Python", "Django", "Django REST Framework", "JWT", "API IGDB"],
+    github: "https://github.com/Ralenday/RaleGames",
+    images: [
+      { src: "assets/RGInicio.webp" },
+      { src: "assets/RGRuleta.webp" },
+      { src: "assets/RGExplorar.webp" }
+    ]
+  },
   {
     tag: "Proyecto para negocio",
     title: "El Buen Sazón",
@@ -68,6 +116,19 @@ const PROJECTS = [
       { src: "assets/R8Inicio.png" },
       { src: "assets/R8Ingredientes.png" },
       { src: "assets/R8Recetas.png" }
+    ]
+  },
+  {
+    tag: "App para reloj",
+    title: "Pulso",
+    tagline: "Tres herramientas rápidas de bienestar en tu muñeca",
+    description:
+      "App para relojes inteligentes con Wear OS con tres herramientas: contador de vasos de agua con meta diaria, ejercicio guiado de respiración de un minuto con vibraciones y un minijuego de reflejos que mide tu tiempo de reacción y guarda tu récord. Diseñada para pantallas redondas con Material 3 y datos guardados en el propio reloj.",
+    tech: ["Kotlin", "Jetpack Compose", "Wear OS", "Material 3"],
+    github: "https://github.com/Ralenday/Pulso",
+    images: [
+      { src: "assets/PUMenu.webp" },
+      { src: "assets/PUReflejos.webp" }
     ]
   }
 ];
@@ -162,7 +223,9 @@ function renderProjects() {
           <div class="project-details-inner">
             <p>${p.description}</p>
             <div class="project-links">
-              <a class="project-link github" href="${p.github}" target="_blank" rel="noopener">Ver en GitHub ↗</a>
+              ${p.private
+                ? `<span class="project-link private" title="El código no es público">Repositorio privado</span>`
+                : `<a class="project-link github" href="${p.github}" target="_blank" rel="noopener">Ver en GitHub ↗</a>`}
               ${p.demo ? `<a class="project-link demo" href="${p.demo}" target="_blank" rel="noopener">Ver demo ↗</a>` : ""}
             </div>
           </div>
